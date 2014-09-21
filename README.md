@@ -16,7 +16,8 @@ Hardware
 
 Software
 ============
- - Tomcat Server with servlets
+ - Python App for Android based on Kivy framework
+ - C++ CGI-app for robot  control 
  - OpenRobotino API
 
 
