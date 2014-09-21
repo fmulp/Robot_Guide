@@ -23,7 +23,6 @@ def get_exhibits(xmlexcursion):
 	return result
 
 
-
 if __name__ == '__main__':
 	xmldoc = load_xml(raw_input('Pease input xml file path:'))
 	xmlexcursion = get_excursion(xmldoc)
