@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
-<ExcursionTitle name="HackForFuture3">
+<ExcursionTitle name="Hack4SocialChange">
 
 <exhibit id="1">
 	<description> Welcome </description>
-	<audio URL="audio/welcome.ogg"/>
+	<audio URL="audio/Welcome.ogg"/>
 	<visual URL="img/welcome.png"/>
 	<x>200</x>
 	<y>0</y>
@@ -13,8 +13,8 @@
 </exhibit>
 
 <exhibit id="2">
-	<description> Common Info </description>
-	<audio URL="audio/common.ogg"/>
+	<description> Braille Paper </description>
+	<audio URL="audio/Exponat1.ogg"/>
 	<visual URL="img/common.png"/>
 	<x>0</x>
 	<y>200</y>
@@ -23,8 +23,8 @@
 </exhibit>
 
 <exhibit id="3">
-	<description> Infocenter </description>
-	<audio URL="audio/info.ogg"/>
+	<description> Tactile map </description>
+	<audio URL="audio/Exponat2.ogg"/>
 	<visual URL="img/infocenter.png"/>
 	<x>-300</x>
 	<y>0</y>
@@ -33,8 +33,8 @@
 </exhibit>
 
 <exhibit id="4">
-	<description> Bar </description>
-	<audio URL="audio/bar.ogg"/>
+	<description> Minsk Ratusha </description>
+	<audio URL="audio/Exponat3.ogg"/>
 	<visual URL="img/bar.png"/>
 	<x>200</x>
 	<y>700</y>
@@ -43,22 +43,12 @@
 </exhibit>
 
 <exhibit id="5">
-	<description> Kalilaska </description>
-	<audio URL="audio/Kalilaska.ogg"/>
+	<description> Good bye </description>
+	<audio URL="audio/Goodbye.ogg"/>
 	<visual URL="img/kalilaska.png"/>
 	<x>100</x>
 	<y>0</y>
 	<phi>30</phi>
-	<time>10</time>
-</exhibit>
-
-<exhibit id="6">
-	<description> End </description>
-	<audio URL="audio/end.ogg"/>
-	<visual URL="img/end.png"/>
-	<x>0</x>
-	<y>100</y>
-	<phi>0</phi>
 	<time>10</time>
 </exhibit>
 
