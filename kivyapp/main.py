@@ -85,10 +85,10 @@ class RobotGuideApp(App):
 		image.allow_stretch = True
 		self.show(label, image)
 
-		reqstring = HOST + '?' + data['x'] + '&' + data['y'] + '&' + data['phi']
+		reqstring = HOST + '?' + str(data['x']) + '&' + str(data['y']) + '&' + str(data['phi'])
 		req = UrlRequest(reqstring)
 
-		sleep((data['x'] ** 2 + data['y'] ** 2) ** 0.5 / float(SPEED))
+		sleep(int((int(data['x']) ** 2 + int(data['y']) ** 2) ** 0.5 / float(SPEED)))
 		self.sound = SoundLoader.load(data['audiourl'])
 		self.sound.play() 
 		Clock.schedule_once(self.scheduler, self.sound.length + 7)
