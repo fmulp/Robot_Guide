@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<excursion id="1" name="Экскурсия раз">
+<description>  Описание экскурсии раз</description>
+<exhibit id="1" name = "Название экспоната">
+	<description>Далееее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываем кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываемakdsjf;alskdfoasidjfl;kasssssssssssssss мия по очереди. КлаДалее кроме знакомых уже нам методов для анимации, вызываем методы setFactory() и setImageResource(). Метод setFactory() позволяет указать подходящий класс ViewFactory, позволяющий менять изображения по очереди. Класс ViewFactory имеет всего один обязательный метод — метод makeView(). Этот метод должен возвращать View подходящего типа, в нашем примере определённым образом настроенный элемент ImageView. </description>
+	<audio URL="1.mp3"/>
+	<visual URL="1.jpg"/>
+	<visual URL="2.jpg"/>
+	<visual URL="3.jpg"/>
+
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="2" name = "Название экспоната">
+	<description> Common Info </description>
+	<audio URL="1.mp3"/>
+	<visual URL="4.jpg"/>
+	<visual URL="5.jpg"/>
+	<visual URL="roger/6jpg.jpg"/>
+	<visual URL="roger/7.jpg"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="3" >
+	<description> Infocenter </description>
+	<audio URL="info.mp3"/>
+	<visual URL="2.jpg"/>
+	<visual URL="1.jpg"/>
+	<visual URL="3.jpg"/>
+	<visual URL="info.png"/>
+	<x>100</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="4">
+	<description> Bar </description>
+	<audio URL="bar.mp3"/>
+	<visual URL="bar.png"/>
+	<x>200</x>
+	<y>100</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="5">
+	<description> Kalilaska </description>
+	<audio URL="kalilaska.mp3"/>
+	<visual URL="3.jpg"/>
+	<x>600</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="6">
+	<description> End </description>
+	<audio URL="end.mp3"/>
+	<visual URL="5.jpg"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+</excursion>

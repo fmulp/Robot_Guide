@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="by.bstu.robotics.guide.activities.ExcursionsTabActivity$PlaceholderFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/duration"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="#ff000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Medium Text"
+        android:id="@+id/tvDuration"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:textColor="#ff000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Тут будет описание экскурсии"
+        android:id="@+id/tvDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvDuration"
+        android:textColor="#ff000000"
+        android:textSize="10sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gvGridOfExhibit"
+        android:layout_below="@+id/tvDescription"
+        android:layout_centerHorizontal="true"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"/>
+
+
+</RelativeLayout>

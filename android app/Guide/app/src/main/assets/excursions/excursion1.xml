@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<excursion name="Экскурсия 2">
+
+<exhibit id="1" name = "Название экспоната">
+	<description> Welcome </description>
+	<audio URL="sounds/welcome.mp3"/>
+	<visual URL="5.jpg"/>
+	<visual URL="claus/2.png"/>
+	<visual URL="3.jpg"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="2" name = "Название экспоната">
+	<description> Common Info </description>
+	<audio URL="sounds/common.mp3"/>
+	<visual URL="claus/1.jpg"/>
+	<visual URL="2.png"/>
+	<visual URL="claus/3.png"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="3" name = "Название экспоната">
+	<description> Infocenter </description>
+	<audio URL="/Guide/audio/info.mp3"/>
+	<visual URL="4.jpg"/>
+	<visual URL="5.jpg"/>
+	<x>100</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="4" name = "Название экспоната">
+	<description> Bar </description>
+	<audio URL="/Guide/audio/bar.mp3"/>
+	<visual URL="3.jpg"/>
+	<x>200</x>
+	<y>100</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="5" name = "Название экспоната">
+	<description> Kalilaska </description>
+	<audio URL="/Guide/audio/kalilaska.mp3"/>
+	<visual URL="1.jpg"/>
+	<visual URL="5.jpg"/>
+	<x>600</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+
+</excursion>

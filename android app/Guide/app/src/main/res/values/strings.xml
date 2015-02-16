@@ -4,5 +4,22 @@
     <string name="app_name">Guide</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_excursions_tab">Выбор экскурсии</string>
+    <string name="title_activity_show_excursion">ShowExcursionActivity</string>
+    <string name="stop">Stop</string>
+    <string name="title_activity_move_to_exhibit">MoveToExhibitActivity</string>
+    <string name="move">Следуйте за мной к следующему экспонату:</string>
+    <string name="end">Завершить экскурсию</string>
+    <string name="ready">Ок</string>
+    <string name="start">Начать экскурсию!</string>
+    <string name="dialog_stop_title">Завершить экскурсию?</string>
+    <string name="dialog_stop_message">Вы действительно хотите завершить экскурсию?</string>
+    <string name="no">Нет</string>
+    <string name="yes">Да</string>
+    <string name="resume">Продолжить</string>
+    <string name="end_up">Завершить</string>
+    <string name="dialog_next_message">Перейти к следующему экспонату?</string>
+    <string name="dialog_end_message">Завершить экскурсию?</string>
+    <string name="duration">Продолжительность: </string>
 
 </resources>

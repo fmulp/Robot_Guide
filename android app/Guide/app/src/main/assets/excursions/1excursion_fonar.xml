@@ -1,0 +1,60 @@
+<excursion id="1" name="Аллея фонарей в Бресте">
+<description>Аллея на улице Гоголя появилась в 2013 году. Часть фонарей связана с творчеством Гоголя: «Какой русский не любит быстрой езды», «Мертвые души. Том второй», «Нос», «Вечера на хуторе близ Диканьки».</description>
+
+<exhibit id="1" name = "Спасатель-пожарный">
+	<description>Первым «свой» фонарь открыли работники МЧС 25 июля в День пожарной службы Республики Беларусь.</description>
+	<audio URL="1.mp3"/>
+	<visual URL="fonar/fonar_mchs_brest_1.jpg"/>
+	<visual URL="fonar/fonar_mchs_brest_2.jpg"/>
+	<visual URL="fonar/fonar_mchs_brest_3.jpg"/>
+
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="2" name = "Кузнец">
+	<description>Величественный кузнец от СП ОАО «Брестгазоаппарат».</description>
+	<audio URL="1.mp3"/>
+	<visual URL="kuznec/kuznec_1.jpg"/>
+	<visual URL="kuznec/kuznec_2.jpg"/>
+	<visual URL="kuznec/kuznec_3.jpg"/>
+
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="3" name = "Вий">
+	<description>Вий - мистическая повесть Николая Гоголя, впервые опубликованная в его сборнике «Миргород» (1835). Название повести — это имя славянского демонического существа, с которым связан сюжет.</description>
+	<audio URL="1.mp3"/>
+	<visual URL="viy/viy1.JPG"/>
+	<visual URL="viy/viy2.JPG"/>
+	<visual URL="viy/viy3.JPG"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="4" name = "Мёртвые души">
+	<description>Удалая тройка и фраза из поэмы "Мертвы души" от еще одной транспортной компании.</description>
+	<audio URL="1.mp3"/>
+	<visual URL="dushi/dushi_1.JPG"/>
+	<visual URL="dushi/dushi_2.JPG"/>
+	<visual URL="dushi/dushi_3.JPG"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+<exhibit id="5" name = "Вечера на хуторе близ диканьки">
+	<description>«Вечера́ на ху́торе близ Дика́ньки» (рус. дореф. «Вечера на хуторѣ близъ Диканьки») — первая книга Николая Васильевича Гоголя (исключая поэму «Ганц Кюхельгартен», напечатанную под псевдонимом). Состоит из двух томов. Первый вышел в 1831, второй — в 1832 году. Рассказы «Вечеров» Гоголь писал в 1829—1832 годах. По сюжету же, — рассказы книги якобы собрал и издал «пасичник Рудый Панько».</description>
+	<audio URL="1.mp3"/>
+	<visual URL="hutor/hutor_1.JPG"/>
+	<visual URL="hutor/hutor_2.JPG"/>
+	<x>0</x>
+	<y>0</y>
+	<phi>0</phi>
+</exhibit>
+
+</excursion>

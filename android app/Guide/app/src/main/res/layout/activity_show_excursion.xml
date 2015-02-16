@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="by.bstu.robotics.guide.activities.ShowExcursionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/seekBar" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/controlRelativeLayout">
+
+            <ImageSwitcher
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/isExhibitVisual"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="false"
+                android:foregroundGravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/tvExhibitDescription"
+                android:textColor="#ff000000"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="false"
+                android:layout_below="@+id/isExhibitVisual" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnNextImage"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/next15"
+                android:background="@null"
+                android:alpha="0.5"
+                android:layout_marginTop="100dp"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnPrevImage"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/previous11"
+                android:background="@null"
+                android:alpha="0.5"
+                android:layout_marginTop="100dp"
+                android:scaleType="fitCenter" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:indeterminate="false"
+        android:layout_above="@+id/controlRelativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/controlRelativeLayout"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnStop"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/stop"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_alignBaseline="@+id/btnNextExhibit"
+            android:layout_centerInParent="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnPause"
+            android:src="@drawable/pause1"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnNextExhibit"
+            android:src="@drawable/next"
+            android:contentDescription="ddd"
+            android:clickable="false"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:focusableInTouchMode="false"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
