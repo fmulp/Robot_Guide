@@ -122,6 +122,10 @@ public class ExcursionsTabActivity extends ActionBarActivity implements View.OnC
         return numberOfExhibit;
     }
 
+    public void updateExcursionDuration(){
+
+    }
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -190,6 +194,7 @@ public class ExcursionsTabActivity extends ActionBarActivity implements View.OnC
             View rootView = inflater.inflate(R.layout.fragment_excursion, container, false);
             int excursionIndex = getArguments().getInt(ARG_SECTION_NUMBER);
             Excursion excursion = ExcursionsService.getExcursionByIndex(excursionIndex);
+
             TextView tvDuration = (TextView) rootView.findViewById(R.id.tvDuration);
             tvDuration.setText(ExcursionsService.durationToString(excursion.getDuration()));
 
@@ -197,7 +202,7 @@ public class ExcursionsTabActivity extends ActionBarActivity implements View.OnC
             tvDescription.setText(excursion.getDescription());
 
             GridView gridView = (GridView) rootView.findViewById(R.id.gvGridOfExhibit);
-            SimpleExhibitArrayAdapter adapter = new SimpleExhibitArrayAdapter(getActivity().getApplicationContext(), R.layout.simple_exhibit_item, excursion.getListOfExhibit());
+            SimpleExhibitArrayAdapter adapter = new SimpleExhibitArrayAdapter(getActivity(), R.layout.simple_exhibit_item, excursion, tvDuration);
             gridView.setAdapter(adapter);
 
 
@@ -205,5 +210,7 @@ public class ExcursionsTabActivity extends ActionBarActivity implements View.OnC
             return rootView;
         }
     }
+
+
 
 }

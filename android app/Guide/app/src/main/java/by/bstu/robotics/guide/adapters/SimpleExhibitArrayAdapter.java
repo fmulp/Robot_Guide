@@ -2,6 +2,7 @@ package by.bstu.robotics.guide.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,21 +18,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import by.bstu.robotics.guide.R;
+import by.bstu.robotics.guide.classes.Excursion;
 import by.bstu.robotics.guide.classes.ExcursionsService;
 import by.bstu.robotics.guide.classes.Exhibit;
 
 public class SimpleExhibitArrayAdapter extends ArrayAdapter<Exhibit> {
 
     private Context mContext = null;
+    private Excursion currentExcursion;
     private ArrayList<Exhibit> listOfExhibit = null;
     private int resourceId;
+    private TextView tvExcursionDuration;
 
-    public SimpleExhibitArrayAdapter(Context context, int resource, List<Exhibit> objects) {
-        super(context, resource, objects);
+
+    public SimpleExhibitArrayAdapter(Context context, int resource, Excursion excursion, TextView tvDuration) {
+        super(context, resource, excursion.getListOfExhibit());
         resourceId = resource;
         mContext = context;
-        listOfExhibit = (ArrayList<Exhibit>) objects;
+        currentExcursion = excursion;
+        listOfExhibit = excursion.getListOfExhibit();
+        tvExcursionDuration = tvDuration;
     }
+
+
 
     @Override
     public int getCount() {
@@ -66,17 +75,33 @@ public class SimpleExhibitArrayAdapter extends ArrayAdapter<Exhibit> {
 
         viewHolder.tvSimpleExhibitName.setText(exhibit.getName());
         viewHolder.ivSimpleExhibit.setImageDrawable(openAssetsDrawable(exhibit.getMainVisualURL()));
-        viewHolder.cbIsChecked.setChecked(exhibit.isChecked());
+
+        final View view = convertView;
         viewHolder.cbIsChecked.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-               exhibit.setChecked(isChecked);
+                exhibit.setChecked(isChecked);
+                updateExcursionDuration();
+                setViewAlfa(view, isChecked);
             }
         });
+        viewHolder.cbIsChecked.setChecked(exhibit.isChecked());
+
         viewHolder.tvDuration.setText(ExcursionsService.durationToString(exhibit.getDuration()));
 //        viewHolder.tvSimpleExhibitDescription.setText(exhibit.getDescription());
 
         return convertView;
+    }
+
+    private void updateExcursionDuration(){
+        tvExcursionDuration.setText(ExcursionsService.durationToString(currentExcursion.getDuration()));
+    }
+
+    private void setViewAlfa(View view, boolean ok){
+        float alfa = 1f;
+        if(!ok)
+            alfa = 0.5f;
+        view.setAlpha(alfa);
     }
 
     private Drawable openAssetsDrawable(String mainVisualURL) {

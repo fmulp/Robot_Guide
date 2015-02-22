@@ -112,7 +112,7 @@ public class Excursion {
     public int getDuration() {
         int duration = 0;
         for(Exhibit exhibit:listOfExhibit){
-            if(exhibit.getDuration() > 0)
+            if(exhibit.isChecked() && exhibit.getDuration() > 0)
                 duration += exhibit.getDuration();
         }
         return duration;

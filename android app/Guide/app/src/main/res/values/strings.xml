@@ -20,6 +20,6 @@
     <string name="end_up">Завершить</string>
     <string name="dialog_next_message">Перейти к следующему экспонату?</string>
     <string name="dialog_end_message">Завершить экскурсию?</string>
-    <string name="duration">Продолжительность: </string>
+    <string name="duration">Продолжительность:</string>
 
 </resources>
