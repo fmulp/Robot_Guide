@@ -24,6 +24,7 @@ import by.bstu.robotics.guide.adapters.SimpleExhibitArrayAdapter;
 import by.bstu.robotics.guide.classes.Excursion;
 import by.bstu.robotics.guide.classes.ExcursionsService;
 import by.bstu.robotics.guide.classes.Exhibit;
+import by.bstu.robotics.guide.classes.HeaderGridView;
 
 public class ExcursionsTabActivity extends ActionBarActivity implements View.OnClickListener{
 
@@ -195,13 +196,17 @@ public class ExcursionsTabActivity extends ActionBarActivity implements View.OnC
             int excursionIndex = getArguments().getInt(ARG_SECTION_NUMBER);
             Excursion excursion = ExcursionsService.getExcursionByIndex(excursionIndex);
 
-            TextView tvDuration = (TextView) rootView.findViewById(R.id.tvDuration);
+            HeaderGridView gridView = (HeaderGridView) rootView.findViewById(R.id.gvGridOfExhibit);
+            View header = inflater.inflate(R.layout.header_grid_view, null);
+
+            TextView tvDuration = (TextView) header.findViewById(R.id.tvDuration);
             tvDuration.setText(ExcursionsService.durationToString(excursion.getDuration()));
 
-            TextView tvDescription = (TextView) rootView.findViewById(R.id.tvDescription);
+            TextView tvDescription = (TextView) header.findViewById(R.id.tvDescription);
             tvDescription.setText(excursion.getDescription());
 
-            GridView gridView = (GridView) rootView.findViewById(R.id.gvGridOfExhibit);
+
+            gridView.addHeaderView(header);
             SimpleExhibitArrayAdapter adapter = new SimpleExhibitArrayAdapter(getActivity(), R.layout.simple_exhibit_item, excursion, tvDuration);
             gridView.setAdapter(adapter);
 
