@@ -21,7 +21,9 @@
             android:text="@string/move"
             android:id="@+id/textView"
             android:layout_gravity="center"
-            android:gravity="center" />
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,29 +32,26 @@
             android:id="@+id/tvExhibitName"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textColor="#ff000000" />
+            android:textColor="#ff000000"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:id="@+id/ivExhibitVisual" />
+            android:layout_height="220dp"
+            android:id="@+id/ivExhibitVisual"
+            android:scaleType="fitCenter"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ready"
             android:id="@+id/btnReady"
-            android:textColor="#ff000000" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/end"
-            android:id="@+id/btnStop2"
             android:textColor="#ff000000"
-            android:visibility="invisible" />
-
-
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp" />
 
 
     </LinearLayout>

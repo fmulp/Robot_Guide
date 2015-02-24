@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import by.bstu.robotics.guide.R;
 import by.bstu.robotics.guide.classes.Excursion;
 import by.bstu.robotics.guide.classes.ExcursionsService;
@@ -21,7 +25,6 @@ import by.bstu.robotics.guide.classes.Exhibit;
 public class MoveToExhibitActivity extends Activity implements View.OnClickListener {
 
     TextView tvExhibitName;
-    Button btnStop;
     Button btnReady;
 
 
@@ -33,8 +36,6 @@ public class MoveToExhibitActivity extends Activity implements View.OnClickListe
         tvExhibitName = (TextView) findViewById(R.id.tvExhibitName);
         btnReady = (Button) findViewById(R.id.btnReady);
         btnReady.setOnClickListener(this);
-        btnStop = (Button) findViewById(R.id.btnStop2);
-        btnStop.setOnClickListener(this);
 
 
         Intent intent = getIntent();
@@ -48,8 +49,24 @@ public class MoveToExhibitActivity extends Activity implements View.OnClickListe
         TextView tvCurrentExhibit = (TextView) findViewById(R.id.tvCurrentExhibit);
         tvCurrentExhibit.setText((currentExcursion.getCurrentExhibitIndex() + 1) + "/" + currentExcursion.numberOfExhibits());
         ImageView ivExhibitVisual = (ImageView) findViewById(R.id.ivExhibitVisual);
-//        ivExhibitVisual.
+        ivExhibitVisual.setImageDrawable(openImage(currentExhibit.getMainVisualURL()));
+
     }
+
+
+    private Drawable openImage(String imageURL) {
+        InputStream ims = null;
+
+        try {
+            ims = getAssets().open(ExcursionsService.IMAGES_PATH + "/" + imageURL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Drawable drawable = Drawable.createFromStream(ims, null);
+
+        return drawable;
+    }
+
 
 
     @Override
@@ -86,29 +103,7 @@ public class MoveToExhibitActivity extends Activity implements View.OnClickListe
                 setResult(RESULT_OK);
                 finish();
                 break;
-            case R.id.btnStop2:
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(getResources().getString(R.string.dialog_stop_title))
-                        .setMessage(getResources().getString(R.string.dialog_stop_message))
-//                        .setIcon(R.drawable.ic_android_cat)
-                        .setCancelable(false)
-                        .setNegativeButton(getResources().getString(R.string.no),
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                })
-                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                setResult(RESULT_CANCELED);
-                                finish();
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
-                break;
             default:
                 break;
         }
