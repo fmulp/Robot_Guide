@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,9 +42,10 @@ public class ShowExcursionActivity extends ActionBarActivity implements View.OnC
     ImageButton btnPrevImage;
     ImageButton btnStop;
     SeekBar seekBar;
+    TextView tvTimeLeft;
     int indexOfExcursion;
 
-    Runnable updateSeekBar;
+    Runnable updateTime;
 
     MediaPlayer mediaPlayer;
 
@@ -60,57 +60,60 @@ public class ShowExcursionActivity extends ActionBarActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_excursion);
-
-        imageSwitcher = (ImageSwitcher) findViewById(R.id.isExhibitVisual);
-        imageSwitcher.setOnClickListener(this);
-        imageSwitcher.setFactory(this);
-        imageSwitcher.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(gd.onTouchEvent(event))
-                    return true;
-                return false;
-            }
-        });
-
-
-
-        tvExhibitDescription = (TextView) findViewById(R.id.tvExhibitDescription);
-        btnNextExhibit = (ImageButton) findViewById(R.id.btnNextExhibit);
-        btnNextExhibit.setOnClickListener(this);
-        btnPause = (ImageButton) findViewById(R.id.btnPause);
-        btnPause.setOnClickListener(this);
-        btnNextImage = (ImageButton) findViewById(R.id.btnNextImage);
-        btnNextImage.setOnClickListener(this);
-        btnPrevImage = (ImageButton) findViewById(R.id.btnPrevImage);
-        btnPrevImage.setOnClickListener(this);
-        btnStop = (ImageButton) findViewById(R.id.btnStop);
-        btnStop.setOnClickListener(this);
-
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
-
-        updateSeekBar = new Runnable() {
-            @Override
-            public void run() {
-                if(mediaPlayer != null && mediaPlayer.isPlaying()) {
-                    seekBar.setProgress(mediaPlayer.getCurrentPosition());
-                    seekBar.postDelayed(updateSeekBar, 1000);
-                }
-            }
-        };
-
-        Intent intent = getIntent();
-        indexOfExcursion = intent.getIntExtra("excursion_index", 0);
-//        currentExcursion = ExcursionsService.getModExcursionByIndex(indexOfExcursion);
-        currentExcursion = ExcursionsService.getExcursionByIndex(indexOfExcursion);
-        currentExcursion.reset();
-
-        gd = new GestureDetector(this, this);
-
-
-
+        init();
         moveToNextExhibit();
     }
+
+   private void init(){
+       imageSwitcher = (ImageSwitcher) findViewById(R.id.isExhibitVisual);
+       imageSwitcher.setOnClickListener(this);
+       imageSwitcher.setFactory(this);
+       imageSwitcher.setOnTouchListener(new View.OnTouchListener() {
+           @Override
+           public boolean onTouch(View v, MotionEvent event) {
+               if(gd.onTouchEvent(event))
+                   return true;
+               return false;
+           }
+       });
+
+
+
+       tvExhibitDescription = (TextView) findViewById(R.id.tvExhibitDescription);
+       btnNextExhibit = (ImageButton) findViewById(R.id.btnNextExhibit);
+       btnNextExhibit.setOnClickListener(this);
+       btnPause = (ImageButton) findViewById(R.id.btnPause);
+       btnPause.setOnClickListener(this);
+       btnNextImage = (ImageButton) findViewById(R.id.btnNextImage);
+       btnNextImage.setOnClickListener(this);
+       btnPrevImage = (ImageButton) findViewById(R.id.btnPrevImage);
+       btnPrevImage.setOnClickListener(this);
+       btnStop = (ImageButton) findViewById(R.id.btnStop);
+       btnStop.setOnClickListener(this);
+
+       seekBar = (SeekBar) findViewById(R.id.seekBar);
+
+       updateTime = new Runnable() {
+           @Override
+           public void run() {
+               if(mediaPlayer != null && mediaPlayer.isPlaying()) {
+                   seekBar.setProgress(mediaPlayer.getCurrentPosition());
+                   seekBar.postDelayed(updateTime, 1000);
+                   tvTimeLeft.setText("-" + ExcursionsService.durationToString(mediaPlayer.getDuration() - mediaPlayer.getCurrentPosition()));
+               }
+           }
+       };
+
+       tvTimeLeft = (TextView) findViewById(R.id.tvTimeLeft);
+
+       Intent intent = getIntent();
+       indexOfExcursion = intent.getIntExtra("excursion_index", 0);
+//        currentExcursion = ExcursionsService.getModExcursionByIndex(indexOfExcursion);
+       currentExcursion = ExcursionsService.getExcursionByIndex(indexOfExcursion);
+       currentExcursion.reset();
+
+       gd = new GestureDetector(this, this);
+   }
 
     private void moveToNextExhibit(){
         if(!currentExcursion.isLastCheckedExhibit()) {
@@ -202,7 +205,7 @@ public class ShowExcursionActivity extends ActionBarActivity implements View.OnC
             mediaPlayer.start();
         }
         btnPause.setImageResource(R.drawable.pause1);
-        seekBar.post(updateSeekBar);
+        seekBar.post(updateTime);
     }
 
     private void releaseMP() {
@@ -217,24 +220,10 @@ public class ShowExcursionActivity extends ActionBarActivity implements View.OnC
     }
 
     private void showNextImage(){
-
-//        Animation inAnim = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
-//        Animation outAnim = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-//
-//        imageSwitcher.setInAnimation(inAnim);
-//        imageSwitcher.setOutAnimation(outAnim);
-
         showImage(currentExhibit.getNextVisualURL());
     }
 
     private void showPrevImage(){
-
-//        Animation inAnim = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
-//        Animation outAnim = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-//
-//        imageSwitcher.setInAnimation(outAnim);
-//        imageSwitcher.setOutAnimation(inAnim);
-
         showImage(currentExhibit.getPrevVisualURL());
     }
 

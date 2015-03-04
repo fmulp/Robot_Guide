@@ -185,10 +185,24 @@ public class ExcursionsService {
         duration /= 1000;
         sec = duration%60;
         min = duration/60;
-        if(min > 0 )
-            durationStr.append(min).append(" мин ");
-        if(sec > 0 )
-        durationStr.append(sec).append(" сек");
+//        if(min > 0 )
+//            durationStr.append(min).append(" мин ");
+//        if(sec > 0 )
+//        durationStr.append(sec).append(" сек");
+
+        if(min > 9)
+            durationStr.append(min);
+        else if(min > 0)
+            durationStr.append("0").append(min);
+        else durationStr.append("00");
+        durationStr.append(":");
+
+        if(sec > 9)
+            durationStr.append(sec);
+        else if(sec > 0)
+            durationStr.append("0").append(sec);
+        else durationStr.append("00");
+
         return durationStr.toString();
     }
 }

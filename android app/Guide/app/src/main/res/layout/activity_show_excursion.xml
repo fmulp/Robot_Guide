@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_above="@+id/seekBar" >
+        android:layout_above="@+id/linearLayout">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -67,14 +67,33 @@
         </RelativeLayout>
     </ScrollView>
 
-    <SeekBar
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:indeterminate="false"
+        android:id="@+id/linearLayout"
         android:layout_above="@+id/controlRelativeLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:gravity="center">
+
+
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_weight="0.2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="00:00"
+            android:id="@+id/tvTimeLeft"
+            android:layout_weight="1"
+            android:textColor="#ff000000" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
